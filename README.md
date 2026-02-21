@@ -7,7 +7,6 @@ A Streamlit-based NLP application that provides:
 
 ## Features
 - Upload PDF, DOCX, or TXT files.
-- Extract text from web URLs.
 - Real-time NLP processing.
 - Interactive visualizations.
 

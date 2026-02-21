@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from utils import extract_text, extract_text_from_url
+from utils import extract_text
 from nlp_engine import NLPEngine
 import plotly.express as px
 
@@ -15,25 +15,18 @@ engine = load_engine()
 
 st.title("🚀 NLP Insights Dashboard")
 st.markdown("""
-This application performs **Sentiment Analysis**, **Text Summarization**, and **Named Entity Recognition (NER)** on uploaded documents or web URLs.
+This application performs **Sentiment Analysis**, **Text Summarization**, and **Named Entity Recognition (NER)** on uploaded documents.
 """)
 
 # Sidebar for input
 st.sidebar.header("Input Source")
-input_type = st.sidebar.radio("Choose Input Type:", ["File Upload", "Web URL"])
+uploaded_file = st.sidebar.file_uploader("Upload a file (PDF, DOCX, TXT)", type=["pdf", "docx", "txt"])
 
 text_input = ""
 
-if input_type == "File Upload":
-    uploaded_file = st.sidebar.file_uploader("Upload a file (PDF, DOCX, TXT)", type=["pdf", "docx", "txt"])
-    if uploaded_file:
-        with st.spinner("Extracting text..."):
-            text_input = extract_text(uploaded_file)
-else:
-    url = st.sidebar.text_input("Enter Web URL:")
-    if url:
-        with st.spinner("Fetching content from URL..."):
-            text_input = extract_text_from_url(url)
+if uploaded_file:
+    with st.spinner("Extracting text..."):
+        text_input = extract_text(uploaded_file)
 
 if text_input:
     if text_input.startswith("Error") or text_input == "Unsupported file format":
@@ -87,4 +80,4 @@ if text_input:
             else:
                 st.write("No named entities detected.")
 else:
-    st.info("Please upload a file or enter a URL to begin analysis.")
+    st.info("Please upload a file to begin analysis.")
