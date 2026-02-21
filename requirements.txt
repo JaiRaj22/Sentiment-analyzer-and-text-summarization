@@ -1,0 +1,12 @@
+streamlit
+transformers
+spacy
+beautifulsoup4
+requests
+PyPDF2
+python-docx
+pandas
+matplotlib
+plotly
+torch
+tf-keras
