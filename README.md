@@ -15,8 +15,11 @@ A Streamlit-based NLP application that provides:
 
 1. Install dependencies:
    ```bash
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
+
+   *Note: If you encounter `metadata-generation-failed`, please ensure you have the latest version of pip and basic build tools installed.*
 
 2. Download the spaCy model:
    ```bash
