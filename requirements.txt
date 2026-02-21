@@ -1,5 +1,5 @@
 streamlit
-transformers
+transformers==4.44.0
 spacy
 beautifulsoup4
 requests
