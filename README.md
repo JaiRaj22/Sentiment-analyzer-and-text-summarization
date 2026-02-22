@@ -29,3 +29,19 @@ A Streamlit-based NLP application that provides:
    ```bash
    streamlit run app.py
    ```
+
+## Running with Docker
+
+To containerize the application and run it without local dependency installation:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t nlp-dashboard .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 8501:8501 nlp-dashboard
+   ```
+
+3. Access the application at `http://localhost:8501`.
