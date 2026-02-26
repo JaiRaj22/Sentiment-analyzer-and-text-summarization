@@ -1,8 +1,6 @@
 streamlit
 transformers==4.48.3
 spacy
-beautifulsoup4
-requests
 PyPDF2
 python-docx
 pandas
