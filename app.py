@@ -13,7 +13,7 @@ def load_engine():
 
 engine = load_engine()
 
-st.title("🚀 NLP Insights Dashboard")
+st.title("NLP Insights Dashboard")
 st.markdown("""
 This application performs **Sentiment Analysis**, **Text Summarization**, and **Named Entity Recognition (NER)** on uploaded documents.
 """)
